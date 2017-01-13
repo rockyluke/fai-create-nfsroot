@@ -1,0 +1,4 @@
+deb http://ftp.debian.org/debian/    stretch main contrib non-free
+deb http://ftp.debian.org/debian/    stretch-updates main contrib non-free
+deb http://security.debian.org/      stretch/updates main contrib non-free
+deb http://fai-project.org/download/ stretch koeln

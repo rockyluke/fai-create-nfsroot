@@ -1,0 +1,54 @@
+# package list for creating the NFSROOT
+
+PACKAGES aptitude
+console-common
+console-tools
+curl
+dhcp3-client
+dialog
+dnsutils
+dosfstools
+dump
+e2fsprogs
+expect
+fai-nfsroot
+firmware-bnx2
+hdparm
+hwinfo
+initramfs-tools
+iproute
+jove-
+less
+lftp
+# liblinux-lvm-perl
+live-boot
+live-boot-initramfs-tools
+# live-initramfs
+lshw
+lvm2
+mdadm
+mdetect
+module-init-tools
+nfs-common
+ntpdate
+parted
+pciutils
+portmap
+procinfo
+psmisc
+reiserfsprogs
+ssh
+syslinux-common
+udev
+usbutils
+wget-
+xfsdump
+xfsprogs
+
+PACKAGES aptitude I386
+grub-pc
+linux-image-686
+
+PACKAGES aptitude AMD64
+grub-pc
+linux-image-amd64

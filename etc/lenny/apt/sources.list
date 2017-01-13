@@ -1,0 +1,2 @@
+deb http://archive.debian.org/debian           lenny main contrib non-free
+deb http://archive.debian.org/debian-backports lenny-backports main contrib non-free
