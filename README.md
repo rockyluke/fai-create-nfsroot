@@ -18,6 +18,10 @@ and cloud environments.
 
 Use this script to build your own nfsroot base system.
 
+## Requirements
+
+- docker
+
 ## Usage
 
 You first need  to choose which dist between lenny  (5.0), squeeze (6.0), wheezy
