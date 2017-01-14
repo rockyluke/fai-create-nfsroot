@@ -42,6 +42,7 @@ rdate
 reiserfsprogs
 rsync
 smartmontools
+subversion-
 ssh
 udev
 usbutils
