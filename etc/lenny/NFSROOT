@@ -27,9 +27,10 @@ live-initramfs
 locales
 lshw
 lvm2
-mdadm
+mdadm-
 mdetect
 module-init-tools
+net-tools
 nfs-common
 ntpdate
 parted
