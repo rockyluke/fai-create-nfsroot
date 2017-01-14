@@ -41,7 +41,7 @@ function makeroot()
 	       --volume "${nfsroot}:${nfsroot}:rw" \
 	       --volume "${conf}:/etc/fai:ro" \
 	       "rockyluke/fai:${release}" \
-	       "${run}"
+	       ${run}
 	if [ ${?} -ne 0 ]
 	then
 	    echo "debootstrap error in docker..."
@@ -100,7 +100,7 @@ case ${1} in
 	echo '-- Debian 8.0 (jessie)'
 	nfsroot='/srv/fai/nfsroot/debian/jessie'
 	nfslive=${nfsroot}
-	run='fai-make-nfsroot'
+	run='fai-make-nfsroot -f'
 	makeroot jessie
 	echo 'DEBIAN JESSIE' > "${nfslive}/.FAI"
 	;;
@@ -108,7 +108,7 @@ case ${1} in
 	echo '-- Debian 9.0 (stretch)'
 	nfsroot='/srv/fai/nfsroot/debian/stretch'
 	nfslive=${nfsroot}
-	run='fai-make-nfsroot'
+	run='fai-make-nfsroot -f'
 	makeroot stretch
 	echo 'DEBIAN STRETCH' > "${nfslive}/.FAI"
 	;;
