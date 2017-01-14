@@ -20,13 +20,11 @@ iproute
 jove-
 less
 lftp
-# liblinux-lvm-perl
 live-boot
 live-boot-initramfs-tools
-# live-initramfs
 lshw
 lvm2
-mdadm
+mdadm-
 mdetect
 module-init-tools
 nfs-common
