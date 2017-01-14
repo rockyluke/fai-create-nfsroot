@@ -14,12 +14,14 @@ hdparm
 hwinfo
 iproute
 jove-
+kbd-
 less
 lftp-
 liblinux-lvm-perl
+live-boot
 lshw
 lvm2
-mdadm
+mdadm-
 module-init-tools
 nfs-common
 ntpdate
@@ -34,6 +36,7 @@ rsync-
 smartmontools
 ssh
 subversion-
+syslinux-common
 udev
 usbutils
 xfsdump
