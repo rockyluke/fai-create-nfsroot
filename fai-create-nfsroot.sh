@@ -26,22 +26,22 @@ function makeroot()
     fi
 
     # clean nfsroot
-    if [ -d ${live} ]
+    if [ -d "${nfslive}" ]
     then
-	${sudo} umount -f -l ${nfslive}/var/lib/dpkg > /dev/null 2>&1
-	${sudo} umount -f -l ${nfslive}/var/cache > /dev/null 2>&1
-	${sudo} rm -rf ${nfslive}
+	${sudo} umount -f -l "${nfslive}/var/lib/dpkg" > /dev/null 2>&1
+	${sudo} umount -f -l "${nfslive}/var/cache" > /dev/null 2>&1
+	${sudo} rm -rf "${nfslive}"
     fi
 
     # make nfsroot
-    if [ -d ${conf} ]
+    if [ -d "${conf}" ]
     then
 	docker run \
 	       --privileged \
-	       --volume ${nfsroot}:${nfsroot}:rw \
-	       --volume ${conf}:/etc/fai:ro \
-	       rockyluke/fai:${release} \
-	       ${run}
+	       --volume "${nfsroot}:${nfsroot}:rw" \
+	       --volume "${conf}:/etc/fai:ro" \
+	       "rockyluke/fai:${release}" \
+	       "${run}"
 	if [ ${?} -ne 0 ]
 	then
 	    echo "debootstrap error in docker..."
@@ -50,9 +50,9 @@ function makeroot()
     fi
 
     # convert base.tar.xz to base.tar.gz
-    if [ -f ${nfslive}/var/tmp/base.tar.xz ]
+    if [ -f "${nfslive}/var/tmp/base.tar.xz" ]
     then
-	cd ${nfslive}/var/tmp
+	cd "${nfslive}/var/tmp" || exit 1
 	${sudo} xz -d base.tar.xz
 	${sudo} gzip base.tar
 	${sudo} mv base.tar.gz base.tgz
@@ -79,7 +79,7 @@ case ${1} in
 	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot'
 	makeroot lenny
-	echo 'DEBIAN LENNY' > ${live}/.FAI
+	echo 'DEBIAN LENNY' > "${nfslive}/.FAI"
 	;;
     squeeze)
 	echo '-- Debian 6.0 (squeeze)'
@@ -88,7 +88,7 @@ case ${1} in
 	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot'
 	makeroot squeeze
-	echo 'DEBIAN SQUEEZE' > ${live}/.FAI
+	echo 'DEBIAN SQUEEZE' > "${nfslive}/.FAI"
 	;;
     wheezy)
 	echo '-- Debian 7.0 (wheezy)'
@@ -97,7 +97,7 @@ case ${1} in
 	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot -l'
 	makeroot wheezy
-	echo 'DEBIAN WHEEZY' > ${live}/.FAI
+	echo 'DEBIAN WHEEZY' > "${nfslive}/.FAI"
 	;;
     jessie)
 	echo '-- Debian 8.0 (jessie)'
@@ -106,7 +106,7 @@ case ${1} in
 	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot'
 	makeroot jessie
-	echo 'DEBIAN JESSIE' > ${live}/.FAI
+	echo 'DEBIAN JESSIE' > "${nfslive}/.FAI"
 	;;
     stretch)
 	echo '-- Debian 9.0 (stretch)'
@@ -115,7 +115,7 @@ case ${1} in
 	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot'
 	makeroot stretch
-	echo 'DEBIAN STRETCH' > ${live}/.FAI
+	echo 'DEBIAN STRETCH' > "${nfslive}/.FAI"
 	;;
     precise)
 	echo '-- Ubuntu 12.04 LTS (precise)'
@@ -124,7 +124,7 @@ case ${1} in
 	tftp='/srv/tftp/ubuntu'
 	run='fai-make-nfsroot'
 	makeroot precise
-	echo 'UBUNTU PRECISE' > ${live}/.FAI
+	echo 'UBUNTU PRECISE' > "${nfslive}/.FAI"
 	;;
     trusty)
 	echo '-- Ubuntu 14.04 LTS (trusty)'
@@ -133,16 +133,16 @@ case ${1} in
 	tftp='/srv/tftp/ubuntu'
 	run='fai-make-nfsroot'
 	makeroot trusty
-	echo 'UBUNTU TRUSTY' > ${live}/.FAI
+	echo 'UBUNTU TRUSTY' > "${nfslive}/.FAI"
 	;;
     yakkety)
 	echo '-- Ubuntu 16.04 LTS (yakkety)'
 	nfsroot='/srv/fai/nfsroot/ubuntu/yakkety'
 	nfslive=${nfsroot}
-	tftp='/srv/tftp/ubuntu/'
+	tftp='/srv/tftp/ubuntu'
 	run='fai-make-nfsroot'
 	makeroot yakkety
-	echo 'UBUNTU YAKKETY' > ${live}/.FAI
+	echo 'UBUNTU YAKKETY' > "${nfslive}/.FAI"
 	;;
     *)
 	echo 'You need to choose one Debian or Ubuntu release'
