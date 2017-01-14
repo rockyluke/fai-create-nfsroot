@@ -76,7 +76,6 @@ case ${1} in
 	echo '-- Debian 5.0 (lenny)'
 	nfsroot='/srv/fai/nfsroot/debian/lenny'
 	nfslive="${nfsroot}/live/filesystem.dir"
-	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot'
 	makeroot lenny
 	echo 'DEBIAN LENNY' > "${nfslive}/.FAI"
@@ -85,7 +84,6 @@ case ${1} in
 	echo '-- Debian 6.0 (squeeze)'
 	nfsroot='/srv/fai/nfsroot/debian/squeeze'
 	nfslive="${nfsroot}/live/filesystem.dir"
-	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot'
 	makeroot squeeze
 	echo 'DEBIAN SQUEEZE' > "${nfslive}/.FAI"
@@ -94,7 +92,6 @@ case ${1} in
 	echo '-- Debian 7.0 (wheezy)'
 	nfsroot='/srv/fai/nfsroot/debian/wheezy'
 	nfslive="${nfsroot}/live/filesystem.dir"
-	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot -l'
 	makeroot wheezy
 	echo 'DEBIAN WHEEZY' > "${nfslive}/.FAI"
@@ -103,7 +100,6 @@ case ${1} in
 	echo '-- Debian 8.0 (jessie)'
 	nfsroot='/srv/fai/nfsroot/debian/jessie'
 	nfslive=${nfsroot}
-	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot'
 	makeroot jessie
 	echo 'DEBIAN JESSIE' > "${nfslive}/.FAI"
@@ -112,7 +108,6 @@ case ${1} in
 	echo '-- Debian 9.0 (stretch)'
 	nfsroot='/srv/fai/nfsroot/debian/stretch'
 	nfslive=${nfsroot}
-	tftp='/srv/tftp/debian'
 	run='fai-make-nfsroot'
 	makeroot stretch
 	echo 'DEBIAN STRETCH' > "${nfslive}/.FAI"
@@ -121,7 +116,6 @@ case ${1} in
 	echo '-- Ubuntu 12.04 LTS (precise)'
 	nfsroot='/srv/fai/nfsroot/ubuntu/precise'
 	nfslive=${nfsroot}
-	tftp='/srv/tftp/ubuntu'
 	run='fai-make-nfsroot'
 	makeroot precise
 	echo 'UBUNTU PRECISE' > "${nfslive}/.FAI"
@@ -130,7 +124,6 @@ case ${1} in
 	echo '-- Ubuntu 14.04 LTS (trusty)'
 	nfsroot='/srv/fai/nfsroot/ubuntu/trusty'
 	nfslive=${nfsroot}
-	tftp='/srv/tftp/ubuntu'
 	run='fai-make-nfsroot'
 	makeroot trusty
 	echo 'UBUNTU TRUSTY' > "${nfslive}/.FAI"
@@ -139,7 +132,6 @@ case ${1} in
 	echo '-- Ubuntu 16.04 LTS (yakkety)'
 	nfsroot='/srv/fai/nfsroot/ubuntu/yakkety'
 	nfslive=${nfsroot}
-	tftp='/srv/tftp/ubuntu'
 	run='fai-make-nfsroot'
 	makeroot yakkety
 	echo 'UBUNTU YAKKETY' > "${nfslive}/.FAI"
