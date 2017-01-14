@@ -14,8 +14,6 @@ dracut-network
 dump
 e2fsprogs
 fai-nfsroot
-firmware-bnx2
-firmware-linux-nonfree
 hdparm
 hwinfo
 initramfs-tools-
@@ -26,7 +24,7 @@ lftp
 live-boot-
 lshw
 lvm2
-mdadm
+mdadm-
 moreutils
 netcat-traditional
 netselect
@@ -44,6 +42,7 @@ rpcbind
 rsync-
 smartmontools
 ssh
+subversion-
 syslinux-common
 systemd-sysv-
 sysvinit-core
