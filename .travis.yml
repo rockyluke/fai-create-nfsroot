@@ -9,4 +9,4 @@ addons:
     - shellcheck
 
 script:
- - shellcheck fai-create-nfsroot.sh
+ - shellcheck -e 2086 fai-create-nfsroot.sh
