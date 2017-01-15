@@ -20,12 +20,12 @@ Use this script to build your own nfsroot base system.
 
 ## Requirements
 
-- docker
+- docker ([read this][1])
 
 ## Usage
 
-You first need  to choose which dist between lenny  (5.0), squeeze (6.0), wheezy
-(7.0), jessie (8.0) and stretch (9.0) you want.
+You  first need  to choose  which nfsroot  between lenny  (5.0), squeeze  (6.0),
+wheezy (7.0), jessie (8.0) and stretch (9.0) you want.
 
 Create Debian 5.0 (lenny) nfsroot
 
@@ -53,6 +53,7 @@ Feel free to contribute on GitHub.
    ╚═(███)═╝
 ```
 
+[1]: https://docs.docker.com/engine/installation/linux/
 [license-img]: https://img.shields.io/badge/license-ISC-blue.svg
 [build-img]: https://travis-ci.org/rockyluke/fai-create-nfsroot.svg?branch=master
 [build-url]: https://travis-ci.org/rockyluke/fai-create-nfsroot
