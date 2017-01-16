@@ -24,7 +24,7 @@ live-boot
 live-boot-initramfs-tools
 lshw
 lvm2
-mdadm-
+mdadm
 mdetect
 module-init-tools
 nfs-common
