@@ -1,6 +1,7 @@
 # package list for creating the NFSROOT
 
 PACKAGES aptitude
+bootpc
 console-common
 console-tools
 dialog
@@ -12,6 +13,7 @@ e2fsprogs
 fai-nfsroot
 hdparm
 hwinfo
+initramfs-tools
 iproute
 jove-
 kbd-
@@ -19,6 +21,7 @@ less
 lftp-
 liblinux-lvm-perl
 live-boot
+live-boot-initramfs-tools
 live-initramfs
 lshw
 lvm2
@@ -41,10 +44,10 @@ udev
 usbutils
 
 PACKAGES aptitude I386
-grub
+grub-pc
 linux-image-686
 read-edid
 
 PACKAGES aptitude AMD64
-grub
+grub-pc
 linux-image-amd64
