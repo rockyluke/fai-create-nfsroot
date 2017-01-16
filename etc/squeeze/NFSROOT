@@ -19,6 +19,7 @@ less
 lftp-
 liblinux-lvm-perl
 live-boot
+live-initramfs
 lshw
 lvm2
 mdadm
