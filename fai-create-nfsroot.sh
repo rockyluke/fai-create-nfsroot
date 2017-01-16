@@ -59,9 +59,6 @@ function makeroot()
 	${sudo} xz -d base.tar.xz
 	${sudo} gzip base.tar
 	${sudo} mv base.tar.gz base.tgz
-    else
-	echo "ERROR: cannot convert base.tar.xz to base.tgz"
-	exit 1
     fi
 }
 
