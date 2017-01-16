@@ -1,52 +1,50 @@
 # package list for creating the NFSROOT
 
 PACKAGES aptitude
-pxelinux
-syslinux-common
-nfs-common
-fai-nfsroot
-module-init-tools
-dhcp3-client
-ssh
-rdate
-lshw
-portmap
-bootpc
-rsync
-lftp
-less
-dump
-reiserfsprogs
-e2fsprogs
-usbutils
-hwinfo
-psmisc
-pciutils
-hdparm
-smartmontools
-parted
-mdadm
-lvm2
-dnsutils
-ntpdate
-dosfstools
-xfsprogs
-xfsdump
-procinfo
-dialog
-discover
-mdetect
-console-tools
+btrfs-tools
 console-common
-expect
-iproute
-udev
-locales
-liblinux-lvm-perl
-live-initramfs
-live-boot
-live-boot-initramfs-tools
+curl
+dialog
+dnsutils
+dosfstools
+# dracut
+# dracut-config-generic
+# dracut-network
+dump
+e2fsprogs
+fai-nfsroot
+hdparm
+hwinfo
 initramfs-tools
+iproute2
+kbd
+less
+lshw
+lvm2
+moreutils
+nfs-common
+ntpdate
+numactl
+parted
+pciutils
+procinfo
+psmisc
+pxelinux
+rdate-
+reiserfsprogs
+rpcbind
+rsync-
+smartmontools
+ssh
+subversion-
+syslinux-common
+# systemd-sysv-
+udev
+usbutils
+wget-
+xfsdump
+xfsprogs
+xz-utils
 
 PACKAGES aptitude I386
 grub-pc
