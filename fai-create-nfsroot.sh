@@ -64,8 +64,9 @@ function makeroot()
     # Copu base.tgz to /srv/fai/config/basefiles
     if [ -d /srv/fai/config/basefiles ]
     then
-	name=$(echo ${release} | tr '[:upper:]' '[:lower:]')
+	name=$(echo ${release} | tr '[:lower:]' '[:upper:]')
 	${sudo} cp "${nfslive}/var/tmp/base.tgz" /srv/fai/config/basefiles/${name}.tgz
+	chmod 644 /srv/fai/config/basefiles/${name}.tgz
     fi
 }
 
