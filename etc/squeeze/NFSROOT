@@ -45,10 +45,12 @@ udev
 usbutils
 
 PACKAGES aptitude I386
+grub
 grub-pc
 linux-image-686
 read-edid
 
 PACKAGES aptitude AMD64
+grub
 grub-pc
 linux-image-amd64
