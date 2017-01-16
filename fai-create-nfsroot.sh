@@ -60,6 +60,13 @@ function makeroot()
 	${sudo} gzip base.tar
 	${sudo} mv base.tar.gz base.tgz
     fi
+
+    # Copu base.tgz to /srv/fai/config/basefiles
+    if [ -d /srv/fai/config/basefiles ]
+    then
+	name=$(echo ${release} | tr '[:upper:]' '[:lower:]')
+	${sudo} cp "${nfslive}/var/tmp/base.tgz" /srv/fai/config/basefiles/${name}.tgz
+    fi
 }
 
 if [ ! -x "$(command -v sudo)" ]
