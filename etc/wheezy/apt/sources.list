@@ -1,5 +1,4 @@
-deb http://ftp.debian.org/debian    wheezy main contrib non-free
-deb http://ftp.debian.org/debian    wheezy-updates main contrib non-free
-deb http://ftp.debian.org/debian    wheezy-backports main contrib non-free
-deb http://security.debian.org      wheezy/updates main contrib non-free
-deb http://fai-project.org/download wheezy koeln
+deb http://ftp.debian.org/debian wheezy main contrib non-free
+deb http://ftp.debian.org/debian wheezy-updates main contrib non-free
+deb http://ftp.debian.org/debian wheezy-backports main contrib non-free
+deb http://security.debian.org   wheezy/updates main contrib non-free
