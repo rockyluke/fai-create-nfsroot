@@ -31,7 +31,6 @@ portmap
 procinfo
 psmisc
 rdate-
-reiserfsprogs
 rsync-
 smartmontools
 ssh
@@ -39,8 +38,6 @@ subversion-
 syslinux-common
 udev
 usbutils
-xfsdump
-xfsprogs
 
 PACKAGES aptitude I386
 grub
