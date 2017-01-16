@@ -12,14 +12,14 @@ dump
 e2fsprogs
 expect
 fai-nfsroot
-firmware-bnx2
 hdparm
 hwinfo
 initramfs-tools
 iproute
 jove-
 less
-lftp
+lftp-
+liblinux-lvm-perl
 live-boot
 live-boot-initramfs-tools
 lshw
@@ -34,14 +34,11 @@ pciutils
 portmap
 procinfo
 psmisc
-reiserfsprogs
 ssh
 syslinux-common
 udev
 usbutils
 wget-
-xfsdump
-xfsprogs
 
 PACKAGES aptitude I386
 grub-pc

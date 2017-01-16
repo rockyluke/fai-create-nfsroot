@@ -18,7 +18,7 @@ initramfs-tools-
 iproute2
 kbd
 less
-lftp
+lftp-
 live-boot-
 lshw
 lvm2
@@ -35,7 +35,6 @@ procinfo
 psmisc
 pxelinux
 rdate-
-reiserfsprogs
 rpcbind
 rsync-
 smartmontools
@@ -47,9 +46,6 @@ sysvinit-core
 udev
 usbutils
 wget-
-xfsdump
-xfsprogs
-xz-utils
 
 PACKAGES aptitude I386
 grub-pc
