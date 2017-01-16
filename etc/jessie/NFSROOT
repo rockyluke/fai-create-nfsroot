@@ -34,7 +34,7 @@ pciutils
 procinfo
 psmisc
 pxelinux
-rdate-
+rdate
 rpcbind
 rsync-
 smartmontools
