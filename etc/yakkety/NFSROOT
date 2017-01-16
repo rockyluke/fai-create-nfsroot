@@ -15,6 +15,7 @@ initramfs-tools
 iproute2
 kbd
 less
+live-boot
 lshw
 lvm2
 moreutils
@@ -35,6 +36,7 @@ ssh
 subversion-
 syslinux-common
 udev
+upstart
 usbutils
 wget-
 
