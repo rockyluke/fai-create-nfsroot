@@ -63,15 +63,6 @@ function makeroot()
 	echo "ERROR: cannot convert base.tar.xz to base.tgz"
 	exit 1
     fi
-
-    # copy initrd.img and vmlinuz
-    if [ -d "${nfslive}/boot" ]
-    then
-	cp "${nfslive}/{initrd.img,vmlinuz}" "${tftproot}"
-    else
-	echo "ERROR: cannot copy initrd.img and vmlinuz from ${nfsroot} to ${tftproot}"
-	exit 1
-    fi
 }
 
 if [ ! -x "$(command -v sudo)" ]
