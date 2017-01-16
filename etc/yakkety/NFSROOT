@@ -1,15 +1,11 @@
 # package list for creating the NFSROOT
 
 PACKAGES aptitude
-# btrfs-tools
 console-common
 curl
 dialog
 dnsutils
 dosfstools
-# dracut
-# dracut-config-generic
-# dracut-network
 dump
 e2fsprogs
 fai-nfsroot
@@ -38,13 +34,9 @@ smartmontools
 ssh
 subversion-
 syslinux-common
-sysvinit-core
 udev
 usbutils
 wget-
-xfsdump
-xfsprogs
-xz-utils
 
 PACKAGES aptitude I386
 grub-pc
