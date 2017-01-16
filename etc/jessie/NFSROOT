@@ -1,8 +1,6 @@
 # package list for creating the NFSROOT
 
 PACKAGES aptitude
-btrfs-tools
-ca-certificates
 console-common
 curl
 dialog
