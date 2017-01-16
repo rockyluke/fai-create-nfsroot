@@ -22,7 +22,7 @@ lftp-
 live-boot-
 lshw
 lvm2
-mdadm-
+mdadm
 moreutils
 netcat-traditional
 netselect

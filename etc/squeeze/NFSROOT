@@ -21,7 +21,7 @@ liblinux-lvm-perl
 live-boot
 lshw
 lvm2
-mdadm-
+mdadm
 module-init-tools
 nfs-common
 ntpdate
