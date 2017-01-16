@@ -37,8 +37,11 @@ function makeroot()
     if [ -d "${conf}" ]
     then
 	docker run \
+	       --interactive \
 	       --privileged \
+	       --tty \
 	       --volume "${nfsroot}:${nfsroot}:rw" \
+	       --volume "${tftproot}:${tftproot}:rw" \
 	       --volume "${conf}:/etc/fai:ro" \
 	       "rockyluke/fai:${release}" \
 	       ${run}
@@ -56,6 +59,18 @@ function makeroot()
 	${sudo} xz -d base.tar.xz
 	${sudo} gzip base.tar
 	${sudo} mv base.tar.gz base.tgz
+    else
+	echo "ERROR: cannot convert base.tar.xz to base.tgz"
+	exit 1
+    fi
+
+    # copy initrd.img and vmlinuz
+    if [ -d "${nfslive}/boot" ]
+    then
+	cp "${nfslive}/{initrd.img,vmlinuz}" "${tftproot}"
+    else
+	echo "ERROR: cannot copy initrd.img and vmlinuz from ${nfsroot} to ${tftproot}"
+	exit 1
     fi
 }
 
@@ -76,6 +91,7 @@ case ${1} in
 	echo '-- Debian 5.0 (lenny)'
 	nfsroot='/srv/fai/nfsroot/debian/lenny'
 	nfslive="${nfsroot}/live/filesystem.dir"
+	tftproot='/srv/tftp/debian/lenny'
 	run='fai-make-nfsroot'
 	makeroot lenny
 	echo 'DEBIAN LENNY' > "${nfslive}/.FAI"
@@ -84,6 +100,7 @@ case ${1} in
 	echo '-- Debian 6.0 (squeeze)'
 	nfsroot='/srv/fai/nfsroot/debian/squeeze'
 	nfslive="${nfsroot}/live/filesystem.dir"
+	tftproot='/srv/tftp/debian/squeeze'
 	run='fai-make-nfsroot'
 	makeroot squeeze
 	echo 'DEBIAN SQUEEZE' > "${nfslive}/.FAI"
@@ -92,6 +109,7 @@ case ${1} in
 	echo '-- Debian 7.0 (wheezy)'
 	nfsroot='/srv/fai/nfsroot/debian/wheezy'
 	nfslive="${nfsroot}/live/filesystem.dir"
+	tftproot='/srv/tftp/debian/wheezy'
 	run='fai-make-nfsroot -l'
 	makeroot wheezy
 	echo 'DEBIAN WHEEZY' > "${nfslive}/.FAI"
@@ -100,6 +118,7 @@ case ${1} in
 	echo '-- Debian 8.0 (jessie)'
 	nfsroot='/srv/fai/nfsroot/debian/jessie'
 	nfslive=${nfsroot}
+	tftproot='/srv/tftp/debian/jessie'
 	run='fai-make-nfsroot -f'
 	makeroot jessie
 	echo 'DEBIAN JESSIE' > "${nfslive}/.FAI"
@@ -108,6 +127,7 @@ case ${1} in
 	echo '-- Debian 9.0 (stretch)'
 	nfsroot='/srv/fai/nfsroot/debian/stretch'
 	nfslive=${nfsroot}
+	tftproot='/srv/tftp/debian/stretch'
 	run='fai-make-nfsroot -f'
 	makeroot stretch
 	echo 'DEBIAN STRETCH' > "${nfslive}/.FAI"
@@ -116,6 +136,7 @@ case ${1} in
 	echo '-- Ubuntu 12.04 LTS (precise)'
 	nfsroot='/srv/fai/nfsroot/ubuntu/precise'
 	nfslive=${nfsroot}
+	tftproot='/srv/tftp/debian/precise'
 	run='fai-make-nfsroot'
 	makeroot precise
 	echo 'UBUNTU PRECISE' > "${nfslive}/.FAI"
@@ -124,6 +145,7 @@ case ${1} in
 	echo '-- Ubuntu 14.04 LTS (trusty)'
 	nfsroot='/srv/fai/nfsroot/ubuntu/trusty'
 	nfslive=${nfsroot}
+	tftproot='/srv/tftp/debian/trusty'
 	run='fai-make-nfsroot'
 	makeroot trusty
 	echo 'UBUNTU TRUSTY' > "${nfslive}/.FAI"
@@ -132,7 +154,8 @@ case ${1} in
 	echo '-- Ubuntu 16.04 LTS (yakkety)'
 	nfsroot='/srv/fai/nfsroot/ubuntu/yakkety'
 	nfslive=${nfsroot}
-	run='fai-make-nfsroot'
+	tftproot='/srv/tftp/debian/yakkety'
+	run='fai-make-nfsroot -v'
 	makeroot yakkety
 	echo 'UBUNTU YAKKETY' > "${nfslive}/.FAI"
 	;;
