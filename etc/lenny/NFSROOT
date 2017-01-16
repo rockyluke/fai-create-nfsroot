@@ -13,7 +13,6 @@ dump
 e2fsprogs
 expect
 fai-nfsroot
-firmware-bnx2
 hdparm
 hwinfo
 initramfs-tools
@@ -39,15 +38,12 @@ portmap
 procinfo
 psmisc
 rdate
-reiserfsprogs
-rsync
+rsync-
 smartmontools
 subversion-
 ssh
 udev
 usbutils
-xfsdump
-xfsprogs
 
 PACKAGES aptitude I386
 grub

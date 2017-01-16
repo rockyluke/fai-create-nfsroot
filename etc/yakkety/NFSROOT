@@ -1,7 +1,7 @@
 # package list for creating the NFSROOT
 
 PACKAGES aptitude
-btrfs-tools
+# btrfs-tools
 console-common
 curl
 dialog
@@ -38,7 +38,7 @@ smartmontools
 ssh
 subversion-
 syslinux-common
-# systemd-sysv-
+sysvinit-core
 udev
 usbutils
 wget-
