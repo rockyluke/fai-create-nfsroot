@@ -146,14 +146,14 @@ case ${1} in
 	makeroot trusty
 	echo 'UBUNTU TRUSTY' > "${nfslive}/.FAI"
 	;;
-    yakkety)
-	echo '-- Ubuntu 16.04 LTS (yakkety)'
-	nfsroot='/srv/fai/nfsroot/ubuntu/yakkety'
+    xenial)
+	echo '-- Ubuntu 16.04 LTS (xenial)'
+	nfsroot='/srv/fai/nfsroot/ubuntu/xenial'
 	nfslive=${nfsroot}
-	tftproot='/srv/tftp/debian/yakkety'
+	tftproot='/srv/tftp/debian/xenial'
 	run='fai-make-nfsroot -v'
-	makeroot yakkety
-	echo 'UBUNTU YAKKETY' > "${nfslive}/.FAI"
+	makeroot xenial
+	echo 'UBUNTU XENIAL' > "${nfslive}/.FAI"
 	;;
     *)
 	echo 'You need to choose one Debian or Ubuntu release'
